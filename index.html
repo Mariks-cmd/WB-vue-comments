@@ -1,0 +1,30 @@
+<!doctype html>
+<meta charset="utf-8">
+<link rel="stylesheet" href="style.css">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+<h1>Vue example - comments</h1>
+<div id="app">
+    <h2>{{header_message}}</h2>
+    <button @click="setLight()" v-if="mode != 'light'">light</button>
+    <button @click="setDark()" v-else>dark</button>
+
+    <form action="" :class="mode + '-mode'" @submit.prevent="addComment">
+        <div>
+            <label for="author">Author: {{author}}</label>
+            <input type="text" name="author" id="author" v-model="author">
+        </div>
+        <div>
+            <label for="message">Comment message</label>
+            <textarea name="message" id="message" cols="30" rows="10" v-model="message"></textarea>
+        </div>
+        <button type="submit">submit</button>
+    </form>
+    <div class="comments">
+        <comment v-for="comment in comments" :comment="comment" :comments="comments">
+            <update_form :comment="comment"></update_form>
+        </comment>
+    </div>
+</div>
+
+<script src="script.js"></script>

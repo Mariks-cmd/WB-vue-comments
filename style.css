@@ -1,0 +1,27 @@
+form {
+    padding: 30px;
+}
+form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.dark-mode {
+    background:rgb(36, 36, 36);
+    color: rgb(209, 209, 209);
+}
+
+.dark-mode input, .dark-mode textarea  {
+    background:rgb(209, 209, 209);
+    color:rgb(36, 36, 36);
+}
+
+.light-mode {
+    background:rgb(209, 209, 209);
+    color:rgb(36, 36, 36);
+}
+
+.light-mode input, .light-mode textarea  {
+    background:rgb(36, 36, 36);
+    color: rgb(209, 209, 209);
+}
